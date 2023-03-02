@@ -1,0 +1,11 @@
+#+TITLE: Problem for Chapter 1 & 2
+#+AUTHOR: Yusheng Zhao
+
+
+
+* Problem 1
+#+begin_src julia :exports both :results output
+a = [1 0 0]
+b = [0 1 0]
+c =  [0 0 1]
+#+end_src
