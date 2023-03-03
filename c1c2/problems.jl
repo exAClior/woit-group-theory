@@ -69,10 +69,16 @@ begin
     @vars x,y,z,t
     my_vec = [x y z]
     fcts = [my_vec * e_vecs[i,:] for i in  1:3]
-    psi_t = exp(-im*e_vals[1]*t)*fcts[1]*e_vecs[1]
-    for i in 2:3
-        psi_t += exp(-im*e_vals[i]*t)*fcts[i]*e_vecs[i] # not sure why not displaying the last ev
+    psi_t = exp(-im*e_vals[3]*t)*fcts[3].*e_vecs[:,3]
+    for i in 1:2
+        # not sure why not displaying the last ev
+        psi_t .+= exp(-im*e_vals[i]*t)*fcts[i].*e_vecs[:,i]
     end
+end
+
+# ╔═╡ dbc733a9-9631-4f63-a570-15588fea9ded
+begin
+    display(expand.(psi_t))
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -565,5 +571,6 @@ version = "17.4.0+0"
 # ╠═34fd73de-ce2a-4d6b-bbb0-f07e889789d1
 # ╠═66e22cb5-7df7-4255-b047-95327f2aa6a5
 # ╠═64ad4e69-981b-4423-bbc3-386a2106dea6
+# ╠═dbc733a9-9631-4f63-a570-15588fea9ded
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
